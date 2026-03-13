@@ -20,11 +20,13 @@ export class AppComponent {
     this.itensDoMenu = [
       {
         label: 'Início',
-        icon: 'pi pi-home'
+        icon: 'pi pi-home',
+        routerLink: ['/']
       },
       {
         label: 'Clientes',
-        icon: 'pi pi-users'
+        icon: 'pi pi-users',
+        routerLink: ['/clientes']
       }
     ]
 
