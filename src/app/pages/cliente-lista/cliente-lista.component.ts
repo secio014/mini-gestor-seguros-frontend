@@ -5,6 +5,7 @@ import { Cliente } from '../../models/cliente';
 import { Button } from "primeng/button"; // Import Interface
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
+import { PrimeNG } from 'primeng/config';
 
 @Component({
   selector: 'app-cliente-lista',
@@ -16,11 +17,19 @@ import { ConfirmationService } from 'primeng/api';
 })
 
 export class ClienteListaComponent implements OnInit {
+
   private clienteService = inject(ClienteService);
   private confirmarDialog = inject(ConfirmationService);
+  private primengConfig = inject(PrimeNG);
+
   clientes: Cliente[] = []; // Começa vazia agora
 
   ngOnInit(): void {
+    this.primengConfig.setTranslation({
+      accept: 'Sim',
+      reject: 'Não',
+    })
+
     this.listar();
   }
 

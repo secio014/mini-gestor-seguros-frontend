@@ -13,7 +13,6 @@ import { SeguroComponent } from './pages/seguro/seguro.component';
 })
 
 export class AppComponent {
-  title = 'mini-gestor-seguros-frontend';
 
   itensDoMenu: MenuItem[] | undefined;
 
