@@ -22,8 +22,8 @@ export class ClienteListaComponent implements OnInit {
   private confirmarDialog = inject(ConfirmationService);
   private primengConfig = inject(PrimeNG);
 
-  clientes: Cliente[] = []; // Começa vazia agora
-
+  clientes: Cliente[] = [];
+  
   ngOnInit(): void {
     this.primengConfig.setTranslation({
       accept: 'Sim',
