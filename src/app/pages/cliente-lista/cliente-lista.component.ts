@@ -1,16 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core'; // Adicionámos inject e OnInit
 import { TableModule } from 'primeng/table';
+import { ClienteService } from '../../services/cliente.service'; // Importamos o serviço
+import { Cliente } from '../../models/cliente'; // Import Interface
 
 @Component({
   selector: 'app-cliente-lista',
+  standalone: true,
   imports: [TableModule],
   templateUrl: './cliente-lista.component.html',
   styleUrl: './cliente-lista.component.css'
 })
-export class ClienteListaComponent {
-  // Uma lista temporária para testarmos o visual antes de ligar ao Java
-  clientes = [
-    { id: '1', nome: 'João Silva' },
-    { id: '2', nome: 'Pedro Sécio' }
-  ];
+export class ClienteListaComponent implements OnInit {
+  private clienteService = inject(ClienteService);
+  clientes: Cliente[] = []; // Começa vazia agora
+
+  ngOnInit(): void {
+    this.listar();
+  }
+
+  listar() {
+    this.clienteService.listarTodos().subscribe(dados => {
+      this.clientes = dados;
+    });
+  }
 }
