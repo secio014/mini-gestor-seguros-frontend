@@ -27,6 +27,11 @@ export class AppComponent {
         label: 'Clientes',
         icon: 'pi pi-users',
         routerLink: ['/clientes']
+      },
+      {
+        label: 'Seguros',
+        icon: 'pi pi-shield',
+        routerLink: ['/seguros']
       }
     ]
 

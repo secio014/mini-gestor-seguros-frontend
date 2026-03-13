@@ -10,6 +10,7 @@ import { Cliente } from '../../models/cliente'; // Import Interface
   templateUrl: './cliente-lista.component.html',
   styleUrl: './cliente-lista.component.css'
 })
+
 export class ClienteListaComponent implements OnInit {
   private clienteService = inject(ClienteService);
   clientes: Cliente[] = []; // Começa vazia agora
