@@ -4,6 +4,7 @@
     <tr>
         <th>ID</th>
         <th>Nome</th>
+        <th>Ações</th>
     </tr>
   </ng-template>
 
@@ -11,6 +12,9 @@
     <tr>
         <td> {{ cliente.id }} </td>
         <td> {{ cliente.nome }} </td>
+        <td>
+          <p-button icon="pi pi-trash" severity="danger" (click)="excluirCliente(cliente.id)"></p-button>
+        </td>
     </tr>
   </ng-template>
 

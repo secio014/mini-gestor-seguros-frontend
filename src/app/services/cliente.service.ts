@@ -13,4 +13,8 @@ export class ClienteService {
   listarTodos() {
     return this.http.get<Cliente[]>(this.url);
   }
+
+  excluir(id: string) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
 }
