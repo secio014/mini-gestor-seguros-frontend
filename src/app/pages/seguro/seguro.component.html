@@ -1,5 +1,9 @@
-@for (seguro of seguros; track seguro.numeroApolice) {
-  <p-card [header]="seguro.tipoSeguro" [subheader]="seguro.numeroApolice">
-     Valor: {{ seguro.valorPremio | currency: 'BRL'  }} 
-  </p-card>
-}
+<div class="grid">
+    @for (seguro of seguros; track seguro.numeroApolice) {
+        <div class="col-4">
+            <p-card [header]="seguro.tipoSeguro" [subheader]="seguro.numeroApolice">
+               Valor: {{ seguro.valorPremio | currency: 'BRL'  }} 
+            </p-card>
+        </div>
+    }
+</div>
